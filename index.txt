@@ -2,23 +2,23 @@ vCard - Personal Portfolio
 
 # sidebar
 
-alt = Richard hanrick
-Richard hanrick
-Web developer
+alt Martin Li
+Martin Li
+Data Analyst
 
 Show Contacts
 
 Email
-richard@example.com
+gl1768@nyu.edu
 
 Phone
-+1 (213) 352-2795
++1 (805) 637-4881
 
 Birthday
-June 23, 1982
+April 17, 1999
 
 Location
-Sacramento, California, USA
+New York, NY, USA
 
 # navbar
 
