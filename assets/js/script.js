@@ -91,24 +91,28 @@ if (formInputs.length > 0) {
   }
 }
 
-// page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
+// Page navigation variables
+const navigationTriggers = document.querySelectorAll("[data-nav-trigger]");
 const pages = document.querySelectorAll("[data-page]");
 
-// add event to all nav links
-if (navigationLinks.length > 0) {
-  for (let i = 0; i < navigationLinks.length; i++) {
-    navigationLinks[i].addEventListener("click", function () {
-      for (let i = 0; i < pages.length; i++) {
-        if (this.dataset.navLink === pages[i].dataset.page) {
-          pages[i].classList.add("active");
-          navigationLinks[i].classList.add("active");
-          window.scrollTo(0, 0);
+// Add event listener to all navigation triggers
+if (navigationTriggers.length > 0) {
+  navigationTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", function () {
+      const targetPage = this.dataset.navTrigger; // Get the target page from data-nav-trigger
+
+      // Show the target page and hide others
+      pages.forEach((page) => {
+        if (page.dataset.page === targetPage) {
+          page.classList.add("active");
         } else {
-          pages[i].classList.remove("active");
-          navigationLinks[i].classList.remove("active");
+          page.classList.remove("active");
         }
-      }
+      });
+
+      // Update active class for navigation triggers
+      navigationTriggers.forEach((nav) => nav.classList.remove("active"));
+      this.classList.add("active");
     });
-  }
+  });
 }
