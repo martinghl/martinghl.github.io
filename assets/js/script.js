@@ -91,31 +91,26 @@ if (formInputs.length > 0) {
   }
 }
 
-// page navigation variables
-// Page navigation variables
+// Navigation functionality
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-// Add event listener to all navigation links
-if (navigationLinks.length > 0) {
-  navigationLinks.forEach((link) => {
-    link.addEventListener("click", function (event) {
-      event.preventDefault(); // Prevent default link behavior
+// Add event listeners to navigation links
+navigationLinks.forEach(link => {
+  link.addEventListener("click", function () {
+    const targetPage = this.dataset.navLink;
 
-      const targetPage = this.dataset.navLink; // Get the target page from data-nav-link
-
-      // Show the target page and hide others
-      pages.forEach((page) => {
-        if (page.dataset.page === targetPage) {
-          page.classList.add("active");
-        } else {
-          page.classList.remove("active");
-        }
-      });
-
-      // Update active class for navigation links
-      navigationLinks.forEach((nav) => nav.classList.remove("active"));
-      this.classList.add("active");
+    // Toggle active class for pages
+    pages.forEach(page => {
+      if (page.dataset.page === targetPage) {
+        page.classList.add("active");
+      } else {
+        page.classList.remove("active");
+      }
     });
+
+    // Toggle active class for navigation links
+    navigationLinks.forEach(nav => nav.classList.remove("active"));
+    this.classList.add("active");
   });
-}
+});
