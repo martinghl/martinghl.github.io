@@ -1167,7 +1167,7 @@ main {
   max-width: 800px;
   margin: 50px auto;
   padding: 30px; /* Increased padding for better spacing */
-  background: var(--eerie-black-1); /* Dark gray background */
+  /* background: var(--eerie-black-1); /* Dark gray background */
   border-radius: 16px;
   box-shadow: var(--shadow-4);
   overflow: hidden; /* Ensure content stays within the container */
