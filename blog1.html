@@ -4,11 +4,110 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My First Blog</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    :root {
+      --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
+      --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
+      --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
+      --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+      --onyx: hsl(240, 1%, 17%);
+      --eerie-black-1: hsl(240, 2%, 13%);
+      --white: hsl(0, 0%, 100%);
+      --orange-yellow-crayola: hsl(45, 100%, 72%);
+      --light-gray: hsl(0, 0%, 84%);
+      --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
+      --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+      --transition-1: 0.25s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--onyx);
+      font-family: 'Poppins', sans-serif;
+      color: var(--white);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      margin: 20px auto;
+      max-width: 800px;
+      padding: 20px;
+      background: var(--eerie-black-1);
+      border-radius: 16px;
+      box-shadow: var(--shadow-4);
+    }
+
+    .blog-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .blog-title {
+      font-size: 2rem;
+      color: var(--orange-yellow-crayola);
+      margin-bottom: 10px;
+    }
+
+    .blog-date time {
+      font-size: 1rem;
+      color: var(--light-gray);
+    }
+
+    .blog-banner {
+      margin: 20px 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .blog-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .blog-image:hover {
+      transform: scale(1.05);
+    }
+
+    .blog-text p {
+      margin-bottom: 20px;
+      font-size: 1rem;
+      color: var(--white);
+    }
+
+    .blog-footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--orange-yellow-crayola);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .back-button:hover {
+      background: var(--white);
+      color: var(--orange-yellow-crayola);
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
   <main>
-    <article class="full-blog">
+    <article>
       <!-- Blog Header -->
       <header class="blog-header">
         <h1 class="blog-title">My First Blog</h1>
@@ -18,7 +117,7 @@
       </header>
 
       <!-- Blog Content -->
-      <section class="blog-content">
+      <section>
         <figure class="blog-banner">
           <img src="./assets/images/blog-1.jpg" alt="Blog Banner" class="blog-image">
         </figure>
@@ -30,7 +129,7 @@
             My life, like anyone’s, is a mosaic of leaps. Some were calculated, others made with trembling hands. Moving to the U.S. at 15, with a suitcase and no language to call my own, was one of the first. I remember the silence of not knowing how to ask for what I needed, the weight of words I couldn’t yet speak. It was disorienting, but it was also formative. Resilience, I learned, isn’t built in triumph—it’s forged in those quiet, uncertain moments when you decide to try again.
           </p>
           <p>
-            Over the years, my path has curved in unexpected ways. What began with numbers—rigid, predictable—expanded into questions about people, systems, and the stories hidden in data. I didn’t plan to end up here,but perhaps that’s the beauty of it: the unexpected reveals the things that matter most.
+            Over the years, my path has curved in unexpected ways. What began with numbers—rigid, predictable—expanded into questions about people, systems, and the stories hidden in data. I didn’t plan to end up here, but perhaps that’s the beauty of it: the unexpected reveals the things that matter most.
           </p>
           <p>
             This work is more than research. It’s a way of asking the world questions and waiting patiently for it to answer. It’s the joy of discovery balanced by the humility of knowing there’s still so much I don’t understand. Every step I’ve taken, from modeling to guiding students through statistical syntax, has been a quiet lesson in the value of perseverance and curiosity.
