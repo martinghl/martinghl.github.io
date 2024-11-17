@@ -91,15 +91,18 @@ if (formInputs.length > 0) {
   }
 }
 
+// page navigation variables
 // Page navigation variables
-const navigationTriggers = document.querySelectorAll("[data-nav-trigger]");
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-// Add event listener to all navigation triggers
-if (navigationTriggers.length > 0) {
-  navigationTriggers.forEach((trigger) => {
-    trigger.addEventListener("click", function () {
-      const targetPage = this.dataset.navTrigger; // Get the target page from data-nav-trigger
+// Add event listener to all navigation links
+if (navigationLinks.length > 0) {
+  navigationLinks.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent default link behavior
+
+      const targetPage = this.dataset.navLink; // Get the target page from data-nav-link
 
       // Show the target page and hide others
       pages.forEach((page) => {
@@ -110,8 +113,8 @@ if (navigationTriggers.length > 0) {
         }
       });
 
-      // Update active class for navigation triggers
-      navigationTriggers.forEach((nav) => nav.classList.remove("active"));
+      // Update active class for navigation links
+      navigationLinks.forEach((nav) => nav.classList.remove("active"));
       this.classList.add("active");
     });
   });
